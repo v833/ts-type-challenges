@@ -8,18 +8,16 @@ interface Todo {
   description: string
   completed: boolean
 }
+// 联合类型 union
+// type TodoPreview = MyPick<Todo, 'title' | 'completed'>
 
-type TodoPreview = MyPick<Todo, 'title' | 'completed'>
-
-const todo: TodoPreview = {
-  title: 'Clean room',
-  completed: false,
-}
-
+// const todo: TodoPreview = {
+//   title: 'Clean room',
+//   completed: false,
+// }
 type MyPick<T, K extends keyof T> = {
   [P in K]: T[P]
 }
-
 // js 实现
 // function myPick(T, K) {
 //   const obj = {}
